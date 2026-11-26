@@ -1,0 +1,7 @@
+keyboard
+PyDirectInput
+PyAutoGUI
+opencv-python
+numpy
+pillow
+requests

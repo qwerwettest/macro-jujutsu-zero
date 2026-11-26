@@ -1,0 +1,5 @@
+config.json
+*.log
+mahito_stats.json
+snaps/
+__pycache__/

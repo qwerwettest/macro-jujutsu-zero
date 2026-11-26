@@ -1,0 +1,7 @@
+{
+  "telegram": {
+    "bot_token": "",
+    "allowed_chat_id": ""
+  },
+  "discord_webhook": ""
+}
