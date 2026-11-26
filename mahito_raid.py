@@ -1,5 +1,5 @@
 """
-Рейд Махито (Jujutsu Zero, метро) — отдельный скрипт по образцу рейда Зенин.
+Рейд Махито (Jujutsu Zero, метро).
 
 Скрипт раз в цикл смотрит на экран и действует по тому, что видит:
     «Ready» / «Retry»                  → клик (рейд начинается)
@@ -12,7 +12,7 @@
                                          (фаза у точки спавна и фаза на путях); при низком HP — уворот Q
     «Next» (Raid Summary)              → клик
     «Close» (награды)                  → считывает кристаллы и сундуки в статистику, клик
-Остальное время (переходы, отсчёт) жмёт способности, как в рейде Зенин.
+Остальное время (переходы, отсчёт) жмёт способности.
 
 Движение — WASD относительно камеры, по пути серии прыжков (3 нажатия пробела
 через 0.1 с, пауза 1 с — пол неровный). Камеру скрипт не крутит.
@@ -43,7 +43,7 @@ import digits
 import tgbot
 import vision
 from winutil import find_window, user32
-from zenin_raid import ZeninRaid, find_button, load_templates, technique_equipped
+from raid_base import RaidBase, find_button, load_templates, technique_equipped
 
 pydirectinput.PAUSE = 0.03
 
@@ -206,8 +206,8 @@ class Stats:
                 f"Средний рейд (последние 20): {avg}")
 
 
-class MahitoRaid(ZeninRaid):
-    """Кнопки, уведомления, выбор техники и клики берутся из рейда Зенин."""
+class MahitoRaid(RaidBase):
+    """Кнопки, уведомления, выбор техники и клики — из raid_base.RaidBase."""
 
     def __init__(self, args):
         super().__init__(args)
